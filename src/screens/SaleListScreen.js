@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRecoilValue } from 'recoil'
 import { Button, View } from 'react-native';
+import { filterState } from '../states/filterState';
+import Filter from '../components/Filter';
 import styles from '../styles';
  
 function SaleListScreen({ navigation }) {
@@ -8,10 +11,21 @@ function SaleListScreen({ navigation }) {
     { id: 2, name: 'Jumper shirt', color: 'nude', cost: '50 euros', imageLink: require('../images/cod5.png') },
     { id: 3, name: 'Cotton Shirt', color: 'white', cost: '45 euros', imageLink: require('../images/cod1.png')},
   ];
+
+  const [filteredProducts, setFilteredProducts] = useState(products)
+  const searchValue = useRecoilValue(filterState)
+
+  useEffect(() => {
+    var temporal = products.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()));
+    setFilteredProducts(temporal)
+  }, [searchValue])
  
   return (
     <View style={styles.container}>
-      {products.map((product) => (
+      <View>
+        <Filter/>{}
+      </View>
+      {filteredProducts.map((product) => (
         <View style={styles.container}>
           <Button style={styles.button}
           color='mediumseagreen'
