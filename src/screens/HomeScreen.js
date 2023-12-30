@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
-import Filter from '../components/Filter';
 import styles from '../styles';
 
 export default function HomeScreen({navigation}) {
@@ -9,7 +8,6 @@ export default function HomeScreen({navigation}) {
       <Text style={styles.title}>
         iClothes
       </Text>
-      <Filter/>{}
       <View style={styles.container}>
       <Button style={styles.button} color='mediumseagreen'
         title="New Arrivals"

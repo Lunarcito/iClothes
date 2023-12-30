@@ -7,15 +7,16 @@ function MyCartScreen({ navigation }) {
   const [wishList, setWishList] = useRecoilState(wishListState)
 
   return (
-    <View style={{marginTop: 30}}>
+    <View style={styles.container}>
       {wishList.map((product) => (
-          <View>
+          <View style={styles.container}>
             <Text>{product.name}</Text>
             <Text>{product.cost}</Text>
           </View>
         ))}
-        <Button style={styles.button} 
-              color='green'
+        <View style={styles.button}>
+        <Button
+              color='mediumseagreen'
               title={'Buy now'}
               onPress={
                 () => {
@@ -25,7 +26,8 @@ function MyCartScreen({ navigation }) {
                 }
               }
             }
-        />
+        />          
+        </View>
     </View>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, View } from 'react-native';
+import styles from '../styles';
  
 function SaleListScreen({ navigation }) {
   const products = [
@@ -9,13 +10,17 @@ function SaleListScreen({ navigation }) {
   ];
  
   return (
-    <View style={{padding: 30}}>
+    <View style={styles.container}>
       {products.map((product) => (
-        <Button color='green'
+        <View style={styles.container}>
+          <Button style={styles.button}
+          color='mediumseagreen'
+          padding={20}
           key={product.id}
           title={product.name}
           onPress={() => navigation.navigate('Clothes Details', { product })}
         />
+        </View>
       ))}
     </View>
   );

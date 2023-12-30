@@ -2,6 +2,7 @@
 import { useRecoilState } from 'recoil'
 import { TextInput, View, Text} from 'react-native';
 import { filterState } from '../states/filterState';
+import styles from '../styles';
 
 export default function Filter() {
      
@@ -12,8 +13,8 @@ export default function Filter() {
   };
  
   return (
-  <View>
-    <TextInput
+  <View style={styles.container}>
+    <TextInput style={styles.textInput}
       onChangeText={ text => handleFilterChange(text) }
     />
     <Text>{ filter }</Text>

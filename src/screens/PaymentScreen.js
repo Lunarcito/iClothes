@@ -7,7 +7,7 @@ export default function PaymentScreen({navigation}) {
       <Text style={styles.title}>
         Succesful payment!
       </Text>  
-    <View style={styles.container}>
+    <View style={styles.button}>
       <Button style={styles.button} color='mediumseagreen'
         title="Buy more"
         onPress={() => navigation.navigate('Flash Sale')}

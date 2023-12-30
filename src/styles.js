@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
-    padding: 10
+    
   },
   image: {
     width: 50,
@@ -48,11 +48,11 @@ const styles = StyleSheet.create({
     marginBottom: 20
   },
   button: {
-    marginTop:30,
-    color:'green',
-    backgroundColor: 'green',
-    padding: 25,
+    marginTop:350,
+    color:'mediumseagreen',
+    backgroundColor: 'mediumseagreen',
     borderRadius: 10,
+    justifyContent: 'space-between',
 },
   activeButton: {
   backgroundColor: 'blue',

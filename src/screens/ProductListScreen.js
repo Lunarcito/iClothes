@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button, View } from 'react-native'
+import Filter from '../components/Filter';
+import styles from '../styles';
  
 function ProductListScreen({ navigation }) {
   const products = [
@@ -9,13 +11,18 @@ function ProductListScreen({ navigation }) {
   ];
  
   return (
-    <View style={{marginTop: 30}}>
+    <View style={styles.container}>
+      <View>
+        <Filter/>{}
+      </View>
       {products.map((product) => (
-        <Button color='green'
-          key={product.id}
-          title={product.name}
-          onPress={() => navigation.navigate('Clothes Details', { product })}
-        />
+        <View style={styles.container}>
+          <Button color='mediumseagreen'
+            key={product.id}
+            title={product.name}
+            onPress={() => navigation.navigate('Clothes Details', { product })}
+          />
+        </View>
       ))}
     </View>
   );
