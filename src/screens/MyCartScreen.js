@@ -18,7 +18,11 @@ function MyCartScreen({ navigation }) {
               color='green'
               title={'Buy now'}
               onPress={
-                () => {navigation.navigate('Payment Screen', { wishList })
+                () => {
+                  {
+                  navigation.navigate('Payment Screen', { wishList })
+                  setWishList([])
+                }
               }
             }
         />
