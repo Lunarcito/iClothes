@@ -19,6 +19,13 @@ function ProductListScreen({ navigation }) {
   const searchValue = useRecoilValue(filterState)
 
   useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      setFilteredProducts(products);
+    });
+    return unsubscribe;
+  }, [navigation])
+
+  useEffect(() => {
     var temporal = products.filter(product => product.name.toLowerCase().includes(searchValue.toLowerCase()));
     setFilteredProducts(temporal)
   }, [searchValue])
