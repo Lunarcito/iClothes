@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import { NavigationContainer } from '@react-navigation/native'
+import { NavigationContainer, TabActions } from '@react-navigation/native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import LoginScreen from './src/screens/LoginScreen'
 import HomeScreen from './src/screens/HomeScreen'
@@ -12,10 +13,10 @@ import { RecoilRoot } from 'recoil'
 import styles from './src/styles'
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
   return (
     <RecoilRoot>
       <NavigationContainer style={styles.container}>
@@ -36,8 +37,7 @@ export default function App() {
           </Stack.Group>
           )}
         </Stack.Navigator>
-    </NavigationContainer>
+        </NavigationContainer>
     </RecoilRoot>
-
   );
 }
