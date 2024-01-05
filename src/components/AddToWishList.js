@@ -1,4 +1,4 @@
-import { Text, View, Button } from 'react-native'
+import { View, Button } from 'react-native'
 import { wishListState } from '../states/wishListState'
 import { useSetRecoilState} from 'recoil'
 import styles from '../styles'
@@ -11,8 +11,7 @@ export default function AddToWishlist({ product }) {
   };
 	
   return (
-    <View>
-      <Text>{product.name}</Text>
+    <View style={styles.container}>
       <Button title="Add to Cart" onPress={handleAddToWishlist} style={styles.button} color='mediumseagreen'/>
     </View>
   );
