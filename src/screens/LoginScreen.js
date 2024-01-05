@@ -8,10 +8,10 @@ function LoginScreen({navigation, setIsAuthenticated }) {
 
   const handleLogin = () => {
     // Se valida las credenciales del usuario
-    // if (username === 'user' && password === 'password') {
+    if (username === 'user' && password === 'password') {
       setIsAuthenticated(true);
       navigation.navigate('Home')
-    // }
+    }
   };
 
   return (
